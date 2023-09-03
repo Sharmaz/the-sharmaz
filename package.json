@@ -1,6 +1,6 @@
 {
     "name": "the-sharmaz",
-    "description": "A ghost theme based on casper theme",
+    "description": "A ghost theme based on casper started theme",
     "demo": "https://ivanrobles.pro",
     "version": "0.1.0",
     "engines": {
@@ -8,18 +8,14 @@
     },
     "license": "MIT",
     "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
+        "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
-        "dev": "gulp",
-        "zip": "gulp zip",
-        "test": "gscan .",
-        "test:ci": "gscan --fatal --verbose .",
-        "pretest": "gulp build",
-        "preship": "yarn test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
-        "postship": "git fetch && gulp release"
+        "dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"npx tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --watch\" ",
+        "build": "rollup -c --environment BUILD:production && npx tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --minify",
+        "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
+        "test": "npx gscan .",
+        "pretest": "npm run build"
     },
     "author": {
         "name": "Ivan Robles",
@@ -44,27 +40,28 @@
     },
     "bugs": "https://github.com/Sharmaz/the-sharmaz/issues",
     "devDependencies": {
-        "@tryghost/release-utils": "0.8.1",
-        "autoprefixer": "10.4.7",
-        "beeper": "2.1.0",
-        "cssnano": "5.1.12",
-        "gscan": "4.36.1",
-        "gulp": "4.0.2",
-        "gulp-concat": "2.6.1",
-        "gulp-livereload": "4.0.2",
-        "gulp-postcss": "9.0.1",
-        "gulp-uglify": "3.0.2",
-        "gulp-zip": "5.1.0",
-        "inquirer": "8.2.4",
-        "postcss": "8.2.13",
-        "postcss-color-mod-function": "3.0.3",
-        "postcss-easy-import": "4.0.0",
-        "pump": "3.0.0"
+        "@babel/core": "^7.21.0",
+        "@babel/preset-env": "^7.20.2",
+        "@rollup/plugin-babel": "^6.0.3",
+        "@rollup/plugin-commonjs": "^25.0.0",
+        "@rollup/plugin-node-resolve": "^15.0.1",
+        "@rollup/plugin-terser": "^0.4.0",
+        "@tailwindcss/typography": "^0.5.9",
+        "bestzip": "^2.2.1",
+        "concurrently": "^8.2.1",
+        "postcss": "^8.4.24",
+        "postcss-import": "^15.1.0",
+        "postcss-preset-env": "^8.0.1",
+        "rollup": "^3.18.0",
+        "rollup-plugin-livereload": "^2.0.5",
+        "rollup-plugin-postcss": "^4.0.2",
+        "tailwindcss": "^3.3.3"
     },
     "browserslist": [
         "defaults"
     ],
     "config": {
+        "card_assets": true,
         "posts_per_page": 25,
         "image_sizes": {
             "xxs": {
@@ -80,100 +77,12 @@
                 "width": 600
             },
             "l": {
-                "width": 1000
+                "width": 1200
             },
             "xl": {
                 "width": 2000
             }
-        },
-        "card_assets": true,
-        "custom": {
-            "navigation_layout": {
-                "type": "select",
-                "options": [
-                    "Logo on cover",
-                    "Logo in the middle",
-                    "Stacked"
-                ],
-                "default": "Logo on cover"
-            },
-            "title_font": {
-                "type": "select",
-                "options": [
-                    "Modern sans-serif",
-                    "Elegant serif"
-                ],
-                "default": "Modern sans-serif"
-            },
-            "body_font": {
-                "type": "select",
-                "options": [
-                    "Modern sans-serif",
-                    "Elegant serif"
-                ],
-                "default": "Elegant serif"
-            },
-            "show_publication_cover": {
-                "type": "boolean",
-                "default": true,
-                "group": "homepage"
-            },
-            "header_style": {
-                "type": "select",
-                "options": [
-                    "Center aligned",
-                    "Left aligned",
-                    "Hidden"
-                ],
-                "default": "Center aligned",
-                "group": "homepage"
-            },
-            "feed_layout": {
-                "type": "select",
-                "options": [
-                    "Classic",
-                    "Grid",
-                    "List"
-                ],
-                "default": "Classic",
-                "group": "homepage"
-            },
-            "color_scheme": {
-                "type": "select",
-                "options": [
-                    "Light",
-                    "Dark",
-                    "Auto"
-                ],
-                "default": "Light"
-            },
-            "post_image_style": {
-                "type": "select",
-                "options": [
-                    "Wide",
-                    "Full",
-                    "Small",
-                    "Hidden"
-                ],
-                "default": "Wide",
-                "group": "post"
-            },
-            "email_signup_text": {
-                "type": "text",
-                "default": "Sign up for more like this.",
-                "group": "post"
-            },
-            "show_recent_posts_footer": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            }
         }
     },
-    "renovate": {
-        "extends": [
-            "@tryghost:theme"
-        ]
-    },
-    "dependencies": {}
+    "type": "module"
 }
