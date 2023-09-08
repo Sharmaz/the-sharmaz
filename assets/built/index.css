@@ -1027,8 +1027,63 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-0 {
+  height: 0px;
+}
+
+.h-0\.5 {
+  height: 0.125rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.backdrop-blur {
+  --tw-backdrop-blur: blur(8px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 /*
@@ -1045,6 +1100,19 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 /* Ghost components */
 
+/* Gradients
+/* ---------------------------------------------------------- */
+
+.purple-gradient {
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  --tw-gradient-from: #E963FD var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(233 99 253 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(130 51 197 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #8233C5 var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #274B74 var(--tw-gradient-to-position);
+}
+
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
 
@@ -1053,7 +1121,10 @@ html,
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: #ffffff;
+  --tw-bg-opacity: 1;
+  background-color: rgb(7 7 28 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
 }
 
 .gh-main {
@@ -1085,6 +1156,18 @@ html,
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.gh-head-menu .nav {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  li {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 .gh-head-actions a:not(.gh-button) {
