@@ -1027,12 +1027,36 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
 .sticky {
   position: sticky;
 }
 
+.left-0 {
+  left: 0px;
+}
+
 .top-0 {
   top: 0px;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.top-\[250px\] {
+  top: 250px;
+}
+
+.top-\[66px\] {
+  top: 66px;
 }
 
 .z-20 {
@@ -1047,6 +1071,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-0 {
   height: 0px;
 }
@@ -1059,25 +1087,82 @@ video {
   height: 4rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.-translate-y-3 {
+  --tw-translate-y: -0.75rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-3 {
+  --tw-translate-y: 0.75rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-rotate-\[40deg\] {
+  --tw-rotate: -40deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-\[40deg\] {
+  --tw-rotate: 40deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
   justify-content: space-between;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .backdrop-blur {
@@ -1159,14 +1244,41 @@ html,
 }
 
 .gh-head-menu .nav {
+  margin-top: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   vertical-align: middle;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .gh-head-menu .nav {
+    margin-top: 0px;
+    flex-direction: row;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.gh-head-menu .nav {
   li {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+  li {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  li {
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    li {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
   }
 }
 
@@ -1188,6 +1300,26 @@ html,
 
 .gh-head-actions a:last-child svg {
   height: 2rem;
+}
+
+/* Mobile Menu Trigger
+/* ---------------------------------------------------------- */
+
+.burger-element {
+  position: absolute;
+  height: 3px;
+  width: 2rem;
+  transition-property: all;
+  transition-duration: 150ms;
+  transition-delay: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  --tw-gradient-from: #E963FD var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(233 99 253 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(130 51 197 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #8233C5 var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #274B74 var(--tw-gradient-to-position);
 }
 
 /* Index
@@ -1353,5 +1485,33 @@ html,
 @media (max-width: 700px) {
   .gh-author-meta {
     font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:static {
+    position: static;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:h-auto {
+    height: auto;
+  }
+
+  .md\:w-auto {
+    width: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:p-0 {
+    padding: 0px;
   }
 }

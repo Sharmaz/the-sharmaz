@@ -82,9 +82,9 @@ html,
 }
 
 .gh-head-menu .nav {
-  @apply flex text-2xl justify-between align-middle;
+  @apply flex text-4xl md:text-2xl justify-between align-middle flex-col md:flex-row mt-4 md:mt-0;
   li {
-    @apply mx-4;
+    @apply mx-4 my-6 md:my-0 text-center;
   }
 }
 
@@ -106,6 +106,14 @@ html,
 
 .gh-head-actions a:last-child svg {
     height: 2rem;
+}
+
+/* Mobile Menu Trigger
+/* ---------------------------------------------------------- */
+
+.burger-element {
+  @apply purple-gradient absolute w-8 h-[3px]
+  transition-all ease-in-out delay-100
 }
 
 /* Index
