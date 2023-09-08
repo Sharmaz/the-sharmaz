@@ -108,6 +108,13 @@ html,
     height: 2rem;
 }
 
+.footer-social a {
+  @apply mx-4;
+}
+.footer-social svg {
+  fill: #f5f5f5;
+}
+
 /* Mobile Menu Trigger
 /* ---------------------------------------------------------- */
 
