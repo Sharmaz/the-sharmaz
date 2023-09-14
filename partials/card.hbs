@@ -25,9 +25,9 @@ Re-usable card for linking to posts
     <div class="post-card-content">
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
-                <div class="post-card-tags">
+                <div class="post-card-tags flex flex-wrap">
                     {{#foreach tags limit="3"}}
-                        <span class="post-card-primary-tag">{{name}}</span>
+                        <span class="post-card-primary-tag block">{{name}}</span>
                     {{/foreach}}
                 </div>
                 <h2 class="post-card-title">

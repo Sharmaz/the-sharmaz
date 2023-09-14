@@ -228,12 +228,12 @@ html,
     display: flex;
     align-items: center;
     gap: 12px;
-    margin: 0 0 10px;
     color: var(--color-secondary-text);
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: -0.005em;
     line-height: 1;
+    @apply mb-4 text-xl;
 }
 
 .post-card-featured {
@@ -252,9 +252,9 @@ html,
 
 .post-card-title {
     margin: 0;
-    font-size: 2.6rem;
     font-weight: 800;
     line-height: 1.2;
+    @apply text-3xl;
 }
 
 .post-card-content-link:hover .post-card-title {
@@ -286,11 +286,11 @@ html,
     overflow-y: hidden;
     margin-top: 12px;
     max-width: 720px;
-    font-size: 1.6rem;
     line-height: 1.5;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     word-break: break-word;
+    @apply text-xl mb-4 mt-4;
 }
 
 .has-sans-body .post-card-excerpt {
@@ -314,7 +314,6 @@ html,
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-top: 12px;
     padding: 0;
     font-size: 1.3rem;
     color: var(--color-secondary-text);
@@ -455,7 +454,12 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card.dynamic .post-card-title {
-        font-size: 3rem;
+        @apply text-4xl;
+    }
+
+    .post-card.dynamic .post-card-excerpt {
+        -webkit-line-clamp: 3;
+        @apply text-xl mb-4 mt-4;
     }
 }
 

@@ -1072,6 +1072,22 @@ video {
   margin-left: 1rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .block {
   display: block;
 }
@@ -1138,6 +1154,10 @@ video {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -1162,24 +1182,12 @@ video {
   justify-content: space-between;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-
-.rounded-2xl {
-  border-radius: 1rem;
-}
-
 .rounded-3xl {
   border-radius: 1.5rem;
 }
 
-.rounded-\[32px\] {
-  border-radius: 32px;
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .px-4 {
@@ -1195,6 +1203,11 @@ video {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-lg {
@@ -1480,12 +1493,13 @@ html,
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 0 0 10px;
   color: var(--color-secondary-text);
-  font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: -0.005em;
   line-height: 1;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .post-card-featured {
@@ -1504,9 +1518,10 @@ html,
 
 .post-card-title {
   margin: 0;
-  font-size: 2.6rem;
   font-weight: 800;
   line-height: 1.2;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .post-card-content-link:hover .post-card-title {
@@ -1538,11 +1553,14 @@ html,
   overflow-y: hidden;
   margin-top: 12px;
   max-width: 720px;
-  font-size: 1.6rem;
   line-height: 1.5;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   word-break: break-word;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .has-sans-body .post-card-excerpt {
@@ -1566,7 +1584,6 @@ html,
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 12px;
   padding: 0;
   font-size: 1.3rem;
   color: var(--color-secondary-text);
@@ -1710,7 +1727,16 @@ make sure this only happens on large viewports / desktop-ish devices.
   }
 
   .post-card.dynamic .post-card-title {
-    font-size: 3rem;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .post-card.dynamic .post-card-excerpt {
+    -webkit-line-clamp: 3;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
