@@ -9,7 +9,7 @@ Re-usable card for linking to posts
 
         {{!-- This is a responsive image, it loads different sizes depending on device
         https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-        <img class="post-card-image"
+        <img class="post-card-image rounded-3xl"
             srcset="{{img_url feature_image size="s"}} 300w,
                     {{img_url feature_image size="m"}} 600w,
                     {{img_url feature_image size="l"}} 1000w,
@@ -19,43 +19,18 @@ Re-usable card for linking to posts
             alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
             loading="lazy"
         />
-
-        {{#unless access}}
-        {{^has visibility="public"}}
-            <div class="post-card-access">
-                {{> "icons/lock"}}
-                {{#has visibility="members"}}
-                    Members only
-                {{else}}
-                    Paid-members only
-                {{/has}}
-            </div>
-        {{/has}}
-        {{/unless}}
-
     </a>
     {{/if}}
 
     <div class="post-card-content">
-
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
                 <div class="post-card-tags">
-                    {{#primary_tag}}
+                    {{#foreach tags limit="3"}}
                         <span class="post-card-primary-tag">{{name}}</span>
-                    {{/primary_tag}}
-                    {{#if featured}}
-                        <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
-                    {{/if}}
+                    {{/foreach}}
                 </div>
                 <h2 class="post-card-title">
-                    {{#unless access}}
-                    {{^has visibility="public"}}
-                        {{#unless feature_image}}
-                            {{> "icons/lock"}}
-                        {{/unless}}
-                    {{/has}}
-                    {{/unless}}
                     {{title}}
                 </h2>
             </header>
@@ -65,13 +40,29 @@ Re-usable card for linking to posts
         </a>
 
         <footer class="post-card-meta">
-            <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-            {{#if reading_time}}
-                <span class="post-card-meta-length">{{reading_time}}</span>
-            {{/if}}
-            {{#if @site.comments_enabled}}
-                {{comment_count}}
-            {{/if}}
+            <section class="article-byline-content">
+
+            <ul class="author-list w-1/4">
+                {{#foreach authors}}
+                <li class="author-list-item">
+                    <a href="{{url}}" class="author-avatar">
+                        <img class="w-1/4 rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                    </a>
+                </li>
+                {{/foreach}}
+            </ul>
+
+            <div class="article-byline-meta w-full text-lg">
+                <h4 class="author-name">{{authors}}</h4>
+                <div class="byline-meta-content">
+                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    {{#if reading_time}}
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                    {{/if}}
+                </div>
+            </div>
+
+        </section>
         </footer>
 
     </div>
