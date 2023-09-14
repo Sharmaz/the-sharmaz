@@ -38,6 +38,12 @@ production stylesheet in assets/built/screen.css using: npm run dev
 .purple-gradient {
   @apply bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue;
 }
+.orange-gradient {
+    @apply bg-gradient-to-tl from-dark-orchid via-heliotrope to-orange-peel;
+}
+.red-gradient {
+    @apply bg-gradient-to-tl from-orange-peel via-vivid-cerise to-heliotrope;
+}
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
@@ -102,6 +108,29 @@ html,
 }
 .footer-social svg {
   fill: #f5f5f5;
+}
+
+/* Tags
+/* ---------------------------------------------------------- */
+
+.tag-purple {
+    @apply bg-[length:200%_200%]
+    purple-gradient
+    text-slate-300
+    rounded-full hover:animate-purple-animation;
+}
+.tag-orange {
+    @apply bg-[length:200%_200%]
+    orange-gradient
+    text-slate-300
+    rounded-full hover:animate-purple-animation;
+}
+
+.tag-red {
+    @apply bg-[length:200%_200%]
+    red-gradient
+    text-slate-300
+    rounded-full hover:animate-purple-animation;
 }
 
 /* Mobile Menu Trigger

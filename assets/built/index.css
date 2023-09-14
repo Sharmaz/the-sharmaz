@@ -1063,25 +1063,23 @@ video {
   z-index: 20;
 }
 
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
+.my-\[2px\] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
 .ml-4 {
   margin-left: 1rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.mt-12 {
-  margin-top: 3rem;
 }
 
 .mt-16 {
@@ -1190,6 +1188,16 @@ video {
   border-radius: 9999px;
 }
 
+.bg-background {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 26 46 / var(--tw-bg-opacity));
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1200,14 +1208,22 @@ video {
   padding-bottom: 1rem;
 }
 
+.px-\[2px\] {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .text-lg {
@@ -1251,6 +1267,26 @@ production stylesheet in assets/built/screen.css using: npm run dev
   --tw-gradient-to: rgb(130 51 197 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #8233C5 var(--tw-gradient-via-position), var(--tw-gradient-to);
   --tw-gradient-to: #274B74 var(--tw-gradient-to-position);
+}
+
+.orange-gradient {
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  --tw-gradient-from: #8233C5 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(130 51 197 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(233 99 253 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #E963FD var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #FDA000 var(--tw-gradient-to-position);
+}
+
+.red-gradient {
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  --tw-gradient-from: #FDA000 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(253 160 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(211 32 139 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #D3208B var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #E963FD var(--tw-gradient-to-position);
 }
 
 /* Main - Your styles here! Edit below
@@ -1353,6 +1389,105 @@ html,
 
 .footer-social svg {
   fill: #f5f5f5;
+}
+
+/* Tags
+/* ---------------------------------------------------------- */
+
+.tag-purple {
+  border-radius: 9999px;
+  background-size: 200% 200%;
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  --tw-gradient-from: #E963FD var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(233 99 253 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(130 51 197 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #8233C5 var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #274B74 var(--tw-gradient-to-position);
+}
+
+@keyframes animationGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.tag-purple:hover {
+  animation: animationGradient 2s ease alternate infinite;
+}
+
+.tag-orange {
+  border-radius: 9999px;
+  background-size: 200% 200%;
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  --tw-gradient-from: #8233C5 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(130 51 197 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(233 99 253 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #E963FD var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #FDA000 var(--tw-gradient-to-position);
+}
+
+@keyframes animationGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.tag-orange:hover {
+  animation: animationGradient 2s ease alternate infinite;
+}
+
+.tag-red {
+  border-radius: 9999px;
+  background-size: 200% 200%;
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+  background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+  --tw-gradient-from: #FDA000 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(253 160 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(211 32 139 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #D3208B var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-to: #E963FD var(--tw-gradient-to-position);
+}
+
+@keyframes animationGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.tag-red:hover {
+  animation: animationGradient 2s ease alternate infinite;
 }
 
 /* Mobile Menu Trigger

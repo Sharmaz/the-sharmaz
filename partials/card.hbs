@@ -27,7 +27,14 @@ Re-usable card for linking to posts
             <header class="post-card-header">
                 <div class="post-card-tags flex flex-wrap">
                     {{#foreach tags limit="3"}}
-                        <span class="post-card-primary-tag block">{{name}}</span>
+                        <div class="post-card-primary-tag {{#has index="0"}} tag-red{{/has}}
+                            {{#has index="1"}} tag-orange{{/has}} {{#has index="2"}} tag-purple{{/has}}
+                            px-[2px] flex justify-center align-middle text-center"
+                        >
+                            <span class="block bg-background px-4 rounded-full my-[2px]">
+                                {{name}}
+                            </span>
+                        </div>
                     {{/foreach}}
                 </div>
                 <h2 class="post-card-title">
