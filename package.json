@@ -1,88 +1,100 @@
 {
-    "name": "the-sharmaz",
-    "description": "A ghost theme based on casper started theme",
-    "demo": "https://ivanrobles.pro",
-    "version": "0.1.0",
-    "engines": {
-        "ghost": ">=5.0.0"
-    },
-    "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg"
-    },
-    "scripts": {
-        "dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"npx tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --watch\" ",
-        "build": "rollup -c --environment BUILD:production && npx tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --minify",
-        "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
-        "test": "npx gscan .",
-        "pretest": "npm run build"
-    },
-    "author": {
-        "name": "Ivan Robles",
-        "email": "irae45@gmail.com",
-        "url": "https://ivanrobles.pro/"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
-    },
-    "keywords": [
-        "sharmaz",
-        "theme",
-        "ghost-theme"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Sharmaz/the-sharmaz.git"
-    },
-    "bugs": "https://github.com/Sharmaz/the-sharmaz/issues",
-    "devDependencies": {
-        "@babel/core": "^7.21.0",
-        "@babel/preset-env": "^7.20.2",
-        "@rollup/plugin-babel": "^6.0.3",
-        "@rollup/plugin-commonjs": "^25.0.0",
-        "@rollup/plugin-node-resolve": "^15.0.1",
-        "@rollup/plugin-terser": "^0.4.0",
-        "@tailwindcss/typography": "^0.5.9",
-        "bestzip": "^2.2.1",
-        "concurrently": "^8.2.1",
-        "postcss": "^8.4.24",
-        "postcss-import": "^15.1.0",
-        "postcss-preset-env": "^8.0.1",
-        "rollup": "^3.18.0",
-        "rollup-plugin-livereload": "^2.0.5",
-        "rollup-plugin-postcss": "^4.0.2",
-        "tailwindcss": "^3.3.3"
-    },
-    "browserslist": [
-        "defaults"
-    ],
-    "config": {
-        "card_assets": true,
-        "posts_per_page": 25,
-        "image_sizes": {
-            "xxs": {
-                "width": 30
-            },
-            "xs": {
-                "width": 100
-            },
-            "s": {
-                "width": 300
-            },
-            "m": {
-                "width": 600
-            },
-            "l": {
-                "width": 1200
-            },
-            "xl": {
-                "width": 2000
-            }
-        }
-    },
-    "type": "module"
+	"author": {
+		"email": "irae45@gmail.com",
+		"name": "Ivan Robles",
+		"url": "https://ivanrobles.pro/"
+	},
+	"browserslist": [
+		"defaults"
+	],
+	"bugs": "https://github.com/Sharmaz/the-sharmaz/issues",
+	"config": {
+		"card_assets": true,
+		"custom": {
+			"feed_layout": {
+				"default": "Classic",
+				"group": "homepage",
+				"options": [
+					"Classic",
+					"Grid",
+					"List"
+				],
+				"type": "select"
+			}
+		},
+		"image_sizes": {
+			"l": {
+				"width": 1200
+			},
+			"m": {
+				"width": 600
+			},
+			"s": {
+				"width": 300
+			},
+			"xl": {
+				"width": 2000
+			},
+			"xs": {
+				"width": 100
+			},
+			"xxs": {
+				"width": 30
+			}
+		},
+		"posts_per_page": 25
+	},
+	"demo": "https://ivanrobles.pro",
+	"description": "A ghost theme based on casper started theme",
+	"devDependencies": {
+		"@babel/core": "^7.21.0",
+		"@babel/preset-env": "^7.20.2",
+		"@rollup/plugin-babel": "^6.0.3",
+		"@rollup/plugin-commonjs": "^25.0.0",
+		"@rollup/plugin-node-resolve": "^15.0.1",
+		"@rollup/plugin-terser": "^0.4.0",
+		"@tailwindcss/typography": "^0.5.9",
+		"bestzip": "^2.2.1",
+		"concurrently": "^8.2.1",
+		"postcss": "^8.4.24",
+		"postcss-import": "^15.1.0",
+		"postcss-preset-env": "^8.0.1",
+		"rollup": "^3.18.0",
+		"rollup-plugin-livereload": "^2.0.5",
+		"rollup-plugin-postcss": "^4.0.2",
+		"tailwindcss": "^3.3.3"
+	},
+	"engines": {
+		"ghost": ">=5.0.0"
+	},
+	"gpm": {
+		"categories": [
+			"Minimal",
+			"Magazine"
+		],
+		"type": "theme"
+	},
+	"keywords": [
+		"sharmaz",
+		"theme",
+		"ghost-theme"
+	],
+	"license": "MIT",
+	"name": "the-sharmaz",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Sharmaz/the-sharmaz.git"
+	},
+	"screenshots": {
+		"desktop": "assets/screenshot-desktop.jpg"
+	},
+	"scripts": {
+		"build": "rollup -c --environment BUILD:production && npx tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --minify",
+		"dev": "concurrently \"rollup -c --environment BUILD:development -w\" \"npx tailwindcss -i ./assets/css/index.css -o ./assets/built/index.css --watch\" ",
+		"pretest": "npm run build",
+		"test": "npx gscan .",
+		"zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json"
+	},
+	"type": "module",
+	"version": "0.1.0"
 }

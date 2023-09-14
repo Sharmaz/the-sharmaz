@@ -2,56 +2,76 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="gh-card {{post_class}}">
-    <a class="gh-card-link" href="{{url}}">
-        {{#if feature_image}}
-            <picture class="gh-card-picture">
-              <source 
-                srcset="
-                {{img_url feature_image size="xxs" format="avif"}} 30w,
-                {{img_url feature_image size="xs" format="avif"}} 100w,
-                {{img_url feature_image size="s" format="avif"}} 300w,
-                {{img_url feature_image size="m" format="avif"}} 600w,
-                {{img_url feature_image size="l" format="avif"}} 1200w,
-                {{img_url feature_image size="xl" format="avif"}} 2000w"
-                {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
-                type="image/avif"
-                {{^if @first}}loading="lazy"{{/if}}
-              >
-              <source 
-                srcset="
-                {{img_url feature_image size="xxs" format="webp"}} 30w,
-                {{img_url feature_image size="xs" format="webp"}} 100w,
-                {{img_url feature_image size="s" format="webp"}} 300w,
-                {{img_url feature_image size="m" format="webp"}} 600w,
-                {{img_url feature_image size="l" format="webp"}} 1200w,
-                {{img_url feature_image size="xl" format="webp"}} 2000w"
-                {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
-                type="image/webp"
-                {{^if @first}}loading="lazy"{{/if}}
+<article class="post-card {{post_class}}{{#match @custom.feed_layout "Classic"}}{{#is "home"}}{{#has index="0"}} post-card-large{{/has}}{{#has index="1,2"}} dynamic{{/has}}{{/is}}{{/match}}{{#match @custom.feed_layout "Grid"}} keep-ratio{{/match}}{{#match @custom.feed_layout "List"}}{{#is "home, paged"}} post-card-large{{/is}}{{/match}}{{#unless access}} post-access-{{visibility}}{{/unless}}">
 
-              >
-              <img
-                srcset="
-                {{img_url feature_image size="xxs"}} 30w,
-                {{img_url feature_image size="xs"}} 100w,
-                {{img_url feature_image size="s"}} 300w,
-                {{img_url feature_image size="m"}} 600w,
-                {{img_url feature_image size="l"}} 1200w,
-                {{img_url feature_image size="xl"}} 2000w"
-                {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
-                src="{{img_url feature_image size="m"}}"
-                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                class="gh-card-image"
-                {{^if @first}}loading="lazy"{{/if}}
-              >
-            </picture>
-        {{/if}}
-        <div class="gh-card-content">
-            <span class="gh-card-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-            <h2 class="gh-card-title">{{title}}</h2>
-            <p>{{excerpt}}</p>
-            <strong>Read more</strong>
-        </div>
+    {{#if feature_image}}
+    <a class="post-card-image-link" href="{{url}}">
+
+        {{!-- This is a responsive image, it loads different sizes depending on device
+        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+        <img class="post-card-image rounded-3xl"
+            srcset="{{img_url feature_image size="s"}} 300w,
+                    {{img_url feature_image size="m"}} 600w,
+                    {{img_url feature_image size="l"}} 1000w,
+                    {{img_url feature_image size="xl"}} 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="{{img_url feature_image size="m"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+            loading="lazy"
+        />
     </a>
+    {{/if}}
+
+    <div class="post-card-content">
+        <a class="post-card-content-link" href="{{url}}">
+            <header class="post-card-header">
+                <div class="post-card-tags flex flex-wrap">
+                    {{#foreach tags limit="3"}}
+                        <div class="post-card-primary-tag {{#has index="0"}} tag-red{{/has}}
+                            {{#has index="1"}} tag-orange{{/has}} {{#has index="2"}} tag-purple{{/has}}
+                            px-[2px] flex justify-center align-middle text-center"
+                        >
+                            <span class="block bg-background px-4 rounded-full my-[2px]">
+                                {{name}}
+                            </span>
+                        </div>
+                    {{/foreach}}
+                </div>
+                <h2 class="post-card-title">
+                    {{title}}
+                </h2>
+            </header>
+            {{#if excerpt}}
+                <div class="post-card-excerpt">{{excerpt}}</div>
+            {{/if}}
+        </a>
+
+        <footer class="post-card-meta">
+            <section class="article-byline-content">
+
+            <ul class="author-list w-1/4">
+                {{#foreach authors}}
+                <li class="author-list-item">
+                    <a href="{{url}}" class="author-avatar">
+                        <img class="w-1/4 rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                    </a>
+                </li>
+                {{/foreach}}
+            </ul>
+
+            <div class="article-byline-meta w-full text-lg">
+                <h4 class="author-name">{{authors}}</h4>
+                <div class="byline-meta-content">
+                    <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    {{#if reading_time}}
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                    {{/if}}
+                </div>
+            </div>
+
+        </section>
+        </footer>
+
+    </div>
+
 </article>
