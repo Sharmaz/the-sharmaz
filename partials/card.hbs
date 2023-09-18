@@ -25,18 +25,21 @@ Re-usable card for linking to posts
     <div class="post-card-content">
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
-                <div class="post-card-tags flex flex-wrap">
-                    {{#foreach tags limit="3"}}
-                        <div class="post-card-primary-tag {{#has index="0"}} tag-red{{/has}}
-                            {{#has index="1"}} tag-orange{{/has}} {{#has index="2"}} tag-purple{{/has}}
-                            px-[2px] flex justify-center align-middle text-center"
-                        >
-                            <span class="block bg-background px-4 rounded-full my-[2px]">
-                                {{name}}
-                            </span>
-                        </div>
-                    {{/foreach}}
-                </div>
+                {{#if tags}}
+                    <div class="post-card-tags flex flex-wrap">
+                        {{#foreach tags limit="3"}}
+                            <div class="post-card-primary-tag {{#has index="0"}} tag-red{{/has}}
+                                {{#has index="1"}} tag-orange{{/has}} {{#has index="2"}} tag-purple{{/has}}
+                                px-[2px] flex justify-center align-middle text-center"
+                            >
+                                <span class="block bg-background px-4 rounded-full my-[2px]">
+                                    {{name}}
+                                </span>
+                            </div>
+                        {{/foreach}}
+                    </div>
+                {{/if}}
+
                 <h2 class="post-card-title">
                     {{title}}
                 </h2>
@@ -49,15 +52,17 @@ Re-usable card for linking to posts
         <footer class="post-card-meta">
             <section class="article-byline-content">
 
-            <ul class="author-list w-1/4">
-                {{#foreach authors}}
-                <li class="author-list-item">
-                    <a href="{{url}}" class="author-avatar">
-                        <img class="w-1/4 rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                    </a>
-                </li>
-                {{/foreach}}
-            </ul>
+            {{#if authors}}
+                <ul class="author-list w-1/4">
+                    {{#foreach authors}}
+                    <li class="author-list-item">
+                        <a href="{{url}}" class="author-avatar">
+                            <img class="w-1/4 rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                        </a>
+                    </li>
+                    {{/foreach}}
+                </ul>
+            {{/if}}
 
             <div class="article-byline-meta w-full text-lg">
                 <h4 class="author-name">{{authors}}</h4>
