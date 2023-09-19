@@ -1063,9 +1063,14 @@ video {
   z-index: 20;
 }
 
-.my-1 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .my-3 {
@@ -1073,9 +1078,18 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .my-\[2px\] {
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .ml-4 {
@@ -1086,12 +1100,24 @@ video {
   margin-top: 4rem;
 }
 
+.mt-24 {
+  margin-top: 6rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .block {
   display: block;
 }
 
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .hidden {
@@ -1124,6 +1150,14 @@ video {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-\[52px\] {
+  width: 52px;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .w-full {
@@ -1180,6 +1214,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-\[4vmin\] {
+  gap: 4vmin;
+}
+
 .rounded-3xl {
   border-radius: 1.5rem;
 }
@@ -1193,14 +1231,14 @@ video {
   background-color: rgb(26 26 46 / var(--tw-bg-opacity));
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-\[2px\] {
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .py-4 {
@@ -1208,9 +1246,8 @@ video {
   padding-bottom: 1rem;
 }
 
-.px-\[2px\] {
-  padding-left: 2px;
-  padding-right: 2px;
+.text-left {
+  text-align: left;
 }
 
 .text-center {
@@ -1226,6 +1263,16 @@ video {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1234,6 +1281,14 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .backdrop-blur {
@@ -1755,7 +1810,6 @@ html,
 .author-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 0 4px;
   padding: 0;
   list-style: none;
 }
@@ -1920,14 +1974,10 @@ make sure this only happens on large viewports / desktop-ish devices.
   opacity: 0.8;
 }
 
-.gh-excerpt {
-  margin: 1rem 0 0 0;
-}
-
 .gh-feature-image {
   grid-column: wide-start / wide-end;
   width: 100%;
-  margin: 8vmin 0 0;
+  margin-top: 8vmin;
 }
 
 .gh-feature-image img {
@@ -1937,6 +1987,118 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .gh-post-footer {
   margin: 2rem 0;
+}
+
+/* Content & Typography
+/* ---------------------------------------------------------- */
+
+.gh-content > * + * {
+  margin-top: 4vmin;
+}
+
+.gh-content [id]:not(:first-child) {
+  margin: 1.5em 0 0;
+}
+
+.gh-content > [id] + * {
+  margin-top: 1.5rem;
+}
+
+.gh-content [id] + .kg-card,
+.gh-content blockquote + .kg-card {
+  margin-top: 6vmin;
+}
+
+.gh-canvas > blockquote,
+.gh-canvas > ol,
+.gh-canvas > ul,
+.gh-canvas > dl,
+.gh-canvas > p {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  /* font-size: 2rem; */
+  line-height: 1.6em;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.gh-canvas > ul {
+  list-style-type: disc;
+  line-height: 1.6em;
+}
+
+.gh-canvas > ul li {
+  line-height: 1.6em;
+  padding-left: .3em;
+  margin-top: 1rem;
+}
+
+.gh-content > ul,
+.gh-content > ol,
+.gh-content > dl {
+  padding-left: 1.9em;
+}
+
+.gh-content hr {
+  margin-top: 6vmin;
+}
+
+.gh-content hr + * {
+  margin-top: 6vmin !important;
+}
+
+.gh-content blockquote {
+  position: relative;
+  font-style: italic;
+}
+
+.gh-content blockquote::before {
+  content: "";
+  position: absolute;
+  left: -1.5em;
+  top: 0;
+  bottom: 0;
+  width: 0.3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(130 51 197 / var(--tw-bg-opacity));
+}
+
+.gh-content h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .gh-content h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.gh-content a {
+  text-decoration-line: underline;
+  text-decoration-color: #8233C5;
+  text-underline-offset: 5px;
+}
+
+@media (max-width: 650px) {
+  .gh-canvas blockquote,
+    .gh-canvas ol,
+    .gh-canvas ul,
+    .gh-canvas dl,
+    .gh-canvas p {
+    font-size: 1rem;
+  }
+
+  .gh-content blockquote::before {
+    left: -4vmin;
+  }
+
+  .read-more .post-card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 /* Author Archive
@@ -1991,6 +2153,11 @@ make sure this only happens on large viewports / desktop-ish devices.
     position: static;
   }
 
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .md\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -2020,17 +2187,70 @@ make sure this only happens on large viewports / desktop-ish devices.
     width: 2.5rem;
   }
 
+  .md\:w-\[1200px\] {
+    width: 1200px;
+  }
+
+  .md\:w-\[720px\] {
+    width: 720px;
+  }
+
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:flex-row {
     flex-direction: row;
   }
 
+  .md\:gap-\[4vmin\] {
+    gap: 4vmin;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-\[1200px\] {
+    width: 1200px;
+  }
+
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lg\:gap-\[4vmin\] {
+    gap: 4vmin;
   }
 }
 
