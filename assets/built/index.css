@@ -1214,6 +1214,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-\[4vmin\] {
+  gap: 4vmin;
+}
+
 .rounded-3xl {
   border-radius: 1.5rem;
 }
@@ -2199,6 +2203,14 @@ make sure this only happens on large viewports / desktop-ish devices.
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -2225,6 +2237,20 @@ make sure this only happens on large viewports / desktop-ish devices.
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-\[1200px\] {
+    width: 1200px;
+  }
+
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lg\:gap-\[4vmin\] {
+    gap: 4vmin;
   }
 }
 

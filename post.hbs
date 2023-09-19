@@ -49,7 +49,7 @@
         </section>
 
         {{#if feature_image}}
-        <figure class="gh-feature-image md:w-[1200px] md:mx-auto">
+        <figure class="gh-feature-image lg:w-[1200px] md:mx-auto">
             <picture>
               <source 
                 srcset="
@@ -103,9 +103,9 @@
 {{#get "posts" filter="id:-{{id}}" limit="3" as |more_posts|}}
 
     {{#if more_posts}}
-        <aside class="read-more-wrap outer mt-24 md:w-[1200px] mx-4 md:mx-auto">
+        <aside class="read-more-wrap outer mt-24 md:w-[720px] lg:w-[1200px] mx-4 md:mx-auto">
             <h3 class="text-xl font-bold my-4">Otros Posts...</h3>
-            <div class="read-more inner grid md:gap-[4vmin] md:grid-cols-6">
+            <div class="read-more inner grid gap-[4vmin] md:grid-cols-4 lg:grid-cols-6">
                 {{#foreach more_posts}}
                     {{> "card"}}
                 {{/foreach}}
@@ -114,6 +114,5 @@
     {{/if}}
 
 {{/get}}
-
 
 {{/post}}
