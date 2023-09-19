@@ -1073,6 +1073,11 @@ video {
   margin-right: 1rem;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -1086,11 +1091,6 @@ video {
 .my-\[2px\] {
   margin-top: 2px;
   margin-bottom: 2px;
-}
-
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 
 .mb-8 {
@@ -1109,12 +1109,12 @@ video {
   margin-top: 6rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .block {
@@ -1189,10 +1189,6 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.flex-row {
-  flex-direction: row;
 }
 
 .flex-col {
@@ -1281,6 +1277,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1294,20 +1295,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-\[100px\] {
-  font-size: 100px;
-}
-
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
-}
-
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
 }
 
 .font-bold {
@@ -1582,6 +1569,27 @@ html,
 
 .tag-red:hover {
   animation: animationGradient 2s ease alternate infinite;
+}
+
+.tags-container .gh-page-head {
+  padding-bottom: 0px;
+}
+
+.tags-container header p {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .tags-container header p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 /* Mobile Menu Trigger
@@ -2159,19 +2167,54 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* Author Archive
 /* ---------------------------------------------------------- */
 
+.author-container .gh-page-head p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .author-container .gh-page-head p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.author-container .gh-author-links {
+  text-decoration-line: underline;
+  text-decoration-color: #8233C5;
+  text-underline-offset: 5px;
+}
+
+.author-container .gh-author-links a {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .author-container .gh-author-links a {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.author-container .gh-author-image {
+  width: 64px;
+}
+
+@media (min-width: 768px) {
+  .author-container .gh-author-image {
+    width: 150px;
+  }
+}
+
 .gh-author-image {
-  height: 12vmin;
-  width: 12vmin;
   margin: 0 auto 1.5em;
   border-radius: 100%;
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.gh-author-meta {
-  margin: 2vmin 0 0 0;
-  font-size: 1.2em;
 }
 
 .gh-author-links {
@@ -2261,6 +2304,11 @@ make sure this only happens on large viewports / desktop-ish devices.
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .md\:text-5xl {

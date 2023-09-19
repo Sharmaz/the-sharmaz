@@ -1,7 +1,7 @@
 {{!< default}}
 
 <div class="gh-page">
-    <div class="gh-container">
+    <div class="gh-container author-container">
 
         {{#author}}
         <header class="gh-page-head">
@@ -9,7 +9,7 @@
                 <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}" />
             {{/if}}
 
-            <h1>{{name}}</h1>
+            <h1 class="text-2xl md:text-5xl font-bold">{{name}}</h1>
             {{#if bio}}
                 <p>{{bio}}</p>
             {{/if}}

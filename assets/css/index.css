@@ -133,6 +133,14 @@ html,
     rounded-full hover:animate-purple-animation;
 }
 
+.tags-container .gh-page-head {
+    @apply pb-0;
+}
+
+.tags-container header p {
+    @apply text-base md:text-2xl text-left mx-0 px-0;
+}
+
 /* Mobile Menu Trigger
 /* ---------------------------------------------------------- */
 
@@ -659,18 +667,27 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* Author Archive
 /* ---------------------------------------------------------- */
 
+.author-container .gh-page-head p {
+    @apply text-base md:text-2xl my-4;
+}
+
+.author-container .gh-author-links {
+    @apply underline underline-offset-[5px] decoration-dark-orchid;
+}
+
+.author-container .gh-author-links a {
+    @apply text-base md:text-2xl
+}
+
+.author-container .gh-author-image {
+    @apply w-[64px] md:w-[150px]
+}
+
 .gh-author-image {
-    height: 12vmin;
-    width: 12vmin;
     margin: 0 auto 1.5em;
     border-radius: 100%;
     overflow: hidden;
     object-fit: cover;
-}
-
-.gh-author-meta {
-    margin: 2vmin 0 0 0;
-    font-size: 1.2em;
 }
 
 .gh-author-links {
