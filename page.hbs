@@ -1,14 +1,10 @@
 {{!< default}}
 
 {{#post}}
-<article class="gh-article {{post_class}}">
+<article class="gh-article page-content {{post_class}}">
 
-    <header class="gh-header gh-canvas">
-        <h1 class="gh-title">{{title}}</h1>
-
-        {{#if custom_excerpt}}
-            <p class="gh-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
+    <header class="gh-header gh-canvas md:w-[720px] mx-4 md:mx-auto">
+        <h1 class="gh-title font-bold text-3xl md:text-5xl text-left">{{title}}</h1>
 
         {{#if feature_image}}
             <figure class="gh-feature-image">
@@ -20,7 +16,7 @@
         {{/if}}
     </header>
 
-    <div class="gh-content gh-canvas">
+    <div class="gh-content gh-canvas md:w-[720px] mx-4 md:mx-auto">
         {{content}}
     </div>
 

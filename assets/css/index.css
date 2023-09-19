@@ -573,6 +573,14 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin-top: 6vmin;
 }
 
+.page-content .kg-image {
+    @apply rounded-2xl md:rounded-3xl mx-auto;
+}
+
+.page-content .gh-header {
+    @apply pb-8;
+}
+
 .gh-canvas > blockquote,
 .gh-canvas > ol,
 .gh-canvas > ul,
