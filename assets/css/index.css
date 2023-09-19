@@ -133,6 +133,14 @@ html,
     rounded-full hover:animate-purple-animation;
 }
 
+.tags-container .gh-page-head {
+    @apply pb-0;
+}
+
+.tags-container header p {
+    @apply text-base md:text-2xl text-left mx-0 px-0;
+}
+
 /* Mobile Menu Trigger
 /* ---------------------------------------------------------- */
 
