@@ -2009,6 +2009,22 @@ make sure this only happens on large viewports / desktop-ish devices.
   margin-top: 6vmin;
 }
 
+.page-content .kg-image {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+  .page-content .kg-image {
+    border-radius: 1.5rem;
+  }
+}
+
+.page-content .gh-header {
+  padding-bottom: 2rem;
+}
+
 .gh-canvas > blockquote,
 .gh-canvas > ol,
 .gh-canvas > ul,
@@ -2187,10 +2203,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     width: 2.5rem;
   }
 
-  .md\:w-\[1200px\] {
-    width: 1200px;
-  }
-
   .md\:w-\[720px\] {
     width: 720px;
   }
@@ -2199,24 +2211,12 @@ make sure this only happens on large viewports / desktop-ish devices.
     width: auto;
   }
 
-  .md\:grid-cols-6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:gap-\[4vmin\] {
-    gap: 4vmin;
   }
 
   .md\:text-2xl {
@@ -2247,10 +2247,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
   .lg\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-
-  .lg\:gap-\[4vmin\] {
-    gap: 4vmin;
   }
 }
 
