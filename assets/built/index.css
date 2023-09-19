@@ -2167,19 +2167,54 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* Author Archive
 /* ---------------------------------------------------------- */
 
+.author-container .gh-page-head p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .author-container .gh-page-head p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.author-container .gh-author-links {
+  text-decoration-line: underline;
+  text-decoration-color: #8233C5;
+  text-underline-offset: 5px;
+}
+
+.author-container .gh-author-links a {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .author-container .gh-author-links a {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.author-container .gh-author-image {
+  width: 64px;
+}
+
+@media (min-width: 768px) {
+  .author-container .gh-author-image {
+    width: 150px;
+  }
+}
+
 .gh-author-image {
-  height: 12vmin;
-  width: 12vmin;
   margin: 0 auto 1.5em;
   border-radius: 100%;
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.gh-author-meta {
-  margin: 2vmin 0 0 0;
-  font-size: 1.2em;
 }
 
 .gh-author-links {
