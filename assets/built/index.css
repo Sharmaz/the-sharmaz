@@ -1068,14 +1068,19 @@ video {
   margin-right: 0px;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .my-\[2px\] {
@@ -1147,8 +1152,8 @@ video {
   width: 2rem;
 }
 
-.w-\[64px\] {
-  width: 64px;
+.w-\[52px\] {
+  width: 52px;
 }
 
 .w-auto {
@@ -1175,10 +1180,6 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.grid-cols-6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -1211,10 +1212,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.gap-\[4vmin\] {
-  gap: 4vmin;
 }
 
 .rounded-3xl {
@@ -1262,9 +1259,14 @@ video {
   line-height: 2rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-lg {
@@ -1275,6 +1277,10 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .filter {
@@ -2054,9 +2060,16 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .gh-content h2 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .gh-content h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 .gh-content a {
@@ -2071,11 +2084,16 @@ make sure this only happens on large viewports / desktop-ish devices.
     .gh-canvas ul,
     .gh-canvas dl,
     .gh-canvas p {
-    font-size: 1.8rem;
+    font-size: 1rem;
   }
 
   .gh-content blockquote::before {
     left: -4vmin;
+  }
+
+  .read-more .post-card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -2131,6 +2149,11 @@ make sure this only happens on large viewports / desktop-ish devices.
     position: static;
   }
 
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .md\:my-0 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -2172,13 +2195,36 @@ make sure this only happens on large viewports / desktop-ish devices.
     width: auto;
   }
 
+  .md\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:gap-\[4vmin\] {
+    gap: 4vmin;
   }
 
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
