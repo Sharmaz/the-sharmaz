@@ -62,18 +62,8 @@ html,
     flex-direction: column;
 }
 
-.gh-page {
-    padding: 0 4vmin;
-}
-
 .gh-article {
     padding: 8vmin 0;
-}
-
-.gh-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .gh-head-menu .nav {
@@ -155,29 +145,8 @@ html,
 /* 5. Post Feed
 /* ---------------------------------------------------------- */
 
-.post-feed {
-    position: relative;
-    display: grid;
-    gap: 4.8vmin 4vmin;
-    grid-template-columns: repeat(6, 1fr);
-    padding: max(4.8vmin, 36px) 0 0;
-}
-
 :is(.tag-template, .author-template) .post-feed {
     margin-top: 4vmin;
-}
-
-@media (max-width: 991px) {
-    .post-feed {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 767px) {
-    .post-feed {
-        grid-template-columns: 1fr;
-        grid-gap: 40px;
-    }
 }
 
 .post-card {
