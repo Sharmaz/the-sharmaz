@@ -4,7 +4,7 @@ export default function menuOpen() {
   const burgerElements = document.querySelectorAll('.burger-element');
   const menu = document.querySelector('.gh-head-menu');
   const menuActions = document.querySelector('.gh-head-actions');
-  burgerButton.addEventListener('click', function () {
+  burgerButton.addEventListener('click', () => {
     burgerElements[0].classList.toggle('-translate-y-3');
     burgerElements[0].classList.toggle('rotate-[40deg]');
     burgerElements[1].classList.toggle('opacity-0');
@@ -17,4 +17,4 @@ export default function menuOpen() {
     menu.classList.toggle('backdrop-blur');
     document.body.classList.toggle('overflow-hidden');
   });
-};
+}
