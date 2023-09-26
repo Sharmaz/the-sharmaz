@@ -2,8 +2,8 @@
 export default function menuOpen() {
   const burgerButton = document.querySelector('.burger-button');
   const burgerElements = document.querySelectorAll('.burger-element');
-  const menu = document.querySelector('.gh-head-menu');
-  const menuActions = document.querySelector('.gh-head-actions');
+  const menu = document.getElementById('head-menu');
+  const menuActions = document.getElementById('head-actions');
   burgerButton.addEventListener('click', () => {
     burgerElements[0].classList.toggle('-translate-y-3');
     burgerElements[0].classList.toggle('rotate-[40deg]');

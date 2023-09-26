@@ -16,44 +16,7 @@
 <body class="{{body_class}}">
 <div class="gh-viewport">
 
-<header id="gh-head" class="gh-head sticky top-0 z-20 backdrop-blur">
-  <nav class="gh-head-inner gh-container flex justify-between items-center h-16 px-4 xl:p-0">
-    <div class="gh-head-brand">
-      <a class="gh-head-logo" href="{{@site.url}}">
-        {{#if @site.logo}}
-          <div class="gh-head-logo-title flex items-center">
-            <img src="{{@site.logo}}" alt="{{@site.title}}" width="48" height="48"/>
-            <div class="text-2xl ml-4">
-              {{@site.title}}
-            </div>
-          </div>
-        {{else}}
-          {{@site.title}}
-        {{/if}}
-      </a>
-    </div>
-    <div class="gh-head-menu hidden md:block absolute md:static w-screen md:w-auto h-screen md:h-auto top-[66px] left-0 justify-center items-start">
-      {{navigation}}
-    </div>
-    <div class="gh-head-actions hidden md:block absolute md:static w-screen md:w-auto h-screen md:h-auto top-[250px] left-0 justify-center items-center">
-      <div class="gh-head-actions-list">
-        {{search}}
-      </div>
-    </div>
-    <div
-      role="button"
-      aria-hidden="true"
-      class="burger-button h-8 w-8 md:hidden relative"
-    >
-      <div class="absolute h-8 w-8 left-0 top-4 flex flex-col items-center">
-        <div class="burger-element -translate-y-3"/></div>
-        <div class="burger-element"/></div>
-        <div class="burger-element translate-y-3"/></div>
-      </div>
-    </div>
-  </nav>
-  <div class="purple-gradient w-full h-0.5"></div>
-</header>
+{{> "header"}}
 
 <main class="gh-main">
 
