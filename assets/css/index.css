@@ -121,19 +121,11 @@ html {
 }
 
 .post-card {
-    position: relative;
-    grid-column: span 2;
-    display: flex;
-    flex-direction: column;
-    background-size: cover;
-    word-break: break-word;
+  @apply relative flex flex-col bg-cover col-span-2 break-words;
 }
 
 .post-card-image-link {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin-bottom: 32px;
+  @apply relative overflow-hidden block mb-8;
 }
 
 .post-card-image-link::after {
@@ -184,9 +176,7 @@ html {
 }
 
 .post-card-content-link {
-    position: relative;
-    display: block;
-    color: var(--color-darkgrey);
+    @apply relative block;
 }
 
 .post-card-content-link:hover {
@@ -198,7 +188,7 @@ html {
 }
 
 .no-image .post-card-header {
-    margin-top: 0;
+    @apply mt-0;
 }
 
 .post-card-tags {
@@ -228,90 +218,64 @@ html {
 }
 
 .post-card-title {
-    margin: 0;
-    font-weight: 800;
-    line-height: 1.2;
-    @apply text-3xl;
+    @apply text-3xl font-extrabold m-0 leading-tight;
 }
 
 .post-card-content-link:hover .post-card-title {
-    opacity: 0.9;
+    @apply opacity-90;
 }
 
 .no-image .post-card-title {
-    margin-top: 0;
+    @apply mt-0;
 }
 
 .has-serif-title .post-card-title {
-    font-family: var(--font-serif);
-    letter-spacing: -0.005em;
+    @apply font-sans tracking-tighter;
 }
 
 .post-card-title svg {
-    margin-top: -3px;
-    margin-left: -1px;
+    @apply mt-[-3px] ml-[-1px];
 }
 
 .post-card-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    @apply flex flex-col grow;
 }
 
 .post-card-excerpt {
-    display: -webkit-box;
-    overflow-y: hidden;
-    margin-top: 12px;
-    max-width: 720px;
-    line-height: 1.5;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    word-break: break-word;
-    @apply text-xl mb-4 mt-4;
+    @apply text-xl mb-4 mt-4 max-w-[720px] leading-normal line-clamp-4 break-words;
 }
 
 .has-sans-body .post-card-excerpt {
-    font-family: var(--font-sans);
+    @apply font-sans;
 }
 
 .post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
-    -webkit-line-clamp: 2;
+    @apply line-clamp-2;
 }
 
 :is(.tag-template, .author-template) .post-card-excerpt {
-    margin-top: 6px;
+    @apply mt-1.5;
 }
 
 :is(.tag-template, .author-template) .post-card-large .post-card-excerpt {
-    display: block;
-    overflow-y: auto;
+    @apply block overflow-y-auto;
 }
 
 .post-card-meta {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0;
-    font-size: 1.3rem;
-    color: var(--color-secondary-text);
+    @apply flex items-center gap-1.5 p-0 text-xl;
 }
 
 .post-card-meta > * {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    @apply flex items-center gap-1.5;
 }
 
 .post-card-meta > * + *:not(script)::before {
-    width: 2px;
-    height: 2px;
     content: "";
-    background-color: var(--color-secondary-text);
-    border-radius: 50%;
+    @apply w-[2px] h-[2px] rounded-[50%] content-[""];
 }
 
 .post-card-meta .sep {
-    margin: 0 4px;
+    @apply mx-1;
 }
 
 .author-profile-image {
@@ -325,17 +289,11 @@ html {
 }
 
 .author-list {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    list-style: none;
+    @apply flex flex-wrap p-0 list-none;
 }
 
 .author-list-item {
-    position: relative;
-    flex-shrink: 0;
-    margin: 0;
-    padding: 0;
+    @apply relative flex-shrink-0 m-0 p-0;
 }
 
 
@@ -361,24 +319,19 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-image-link {
-        position: relative;
-        grid-column: span 2;
-        margin-bottom: 0;
+        @apply relative col-span-2 mb-0;
     }
 
     .post-card-large .post-card-content {
-        grid-column: span 1;
-        justify-content: center;
+        @apply justify-center col-span-1;
     }
 
     .post-card-large.no-image .post-card-content {
-        grid-column: span 2;
+        @apply col-span-2;
     }
 
     .post-card-large .post-card-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+        @apply absolute w-full h-full;
     }
 
     .post-card-large .post-card-tags {
@@ -386,9 +339,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-large .post-card-title {
-        margin-top: 0;
-        line-height: 1.05;
-        @apply text-4xl;
+        @apply text-4xl mt-0 leading-tight;
     }
 
     .post-card-large .post-card-excerpt {
@@ -404,17 +355,15 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card-full .post-card-tags {
-        margin-bottom: 14px;
+        @apply mb-3.5;
     }
 
     .post-card-full .post-card-title {
-        font-size: 6.4rem;
-        line-height: 0.95;
+        @apply leading-none text-8xl;
     }
 
     .post-card-full .post-card-excerpt {
-        margin-top: 20px;
-        font-size: 1.8rem;
+        @apply mt-5 text-3xl;
     }
 
     .post-card-large + .post-card-large:nth-child(even) {
@@ -434,8 +383,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 
     .post-card.dynamic .post-card-excerpt {
-        -webkit-line-clamp: 3;
-        @apply text-xl mb-4 mt-4;
+        @apply text-xl mb-4 mt-4 line-clamp-3;
     }
 }
 
