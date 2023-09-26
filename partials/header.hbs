@@ -1,0 +1,39 @@
+<header class="sticky top-0 z-20 backdrop-blur">
+  <nav class="max-w-[1200px] mx-auto flex justify-between items-center h-16 px-4 xl:p-0">
+    <div>
+      <a href="{{@site.url}}">
+        {{#if @site.logo}}
+        <div class="flex items-center">
+          <img src="{{@site.logo}}" alt="{{@site.title}}" width="48" height="48" />
+          <div class="text-2xl ml-4">
+            {{@site.title}}
+          </div>
+        </div>
+        {{else}}
+        {{@site.title}}
+        {{/if}}
+      </a>
+    </div>
+    <div id="head-menu"
+      class="head-menu hidden md:block absolute md:static w-screen md:w-auto h-screen md:h-auto top-[66px] left-0 justify-center items-start">
+      {{navigation}}
+    </div>
+    <div id="head-actions"
+      class="hidden md:block absolute md:static w-screen md:w-auto h-screen md:h-auto top-[250px] left-0 justify-center items-center">
+      <div>
+        {{search}}
+      </div>
+    </div>
+    <div role="button" aria-hidden="true" class="burger-button h-8 w-8 md:hidden relative">
+      <div class="absolute h-8 w-8 left-0 top-4 flex flex-col items-center">
+        <div class="burger-element -translate-y-3" />
+      </div>
+      <div class="burger-element" />
+    </div>
+    <div class="burger-element translate-y-3" />
+    </div>
+    </div>
+    </div>
+  </nav>
+  <div class="purple-gradient w-full h-0.5"></div>
+</header>
