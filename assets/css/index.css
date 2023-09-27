@@ -371,15 +371,6 @@ make sure this only happens on large viewports / desktop-ish devices.
   opacity: 0.8;
 }
 
-.gh-feature-image {
-  grid-column: wide-start / wide-end;
-  @apply w-full mt-[8vmin];
-}
-
-.gh-feature-image img {
-  @apply ms-auto me-auto w-full;
-}
-
 .gh-post-footer {
   margin: 2rem 0;
 }
@@ -406,10 +397,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .page-content .kg-image {
   @apply rounded-2xl md:rounded-3xl mx-auto;
-}
-
-.page-content .gh-header {
-  @apply pb-8;
 }
 
 .gh-canvas > blockquote,
