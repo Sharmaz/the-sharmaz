@@ -50,10 +50,6 @@ html {
   @apply bg-background text-slate-200;
 }
 
-.gh-article {
-  padding: 8vmin 0;
-}
-
 .footer-social a {
   @apply mx-4;
 }
@@ -363,8 +359,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* ---------------------------------------------------------- */
 
 .gh-header {
-  padding: 0 0 8vmin 0;
-  text-align: center;
+  @apply text-center pb-[8vmin]
 }
 
 .gh-post-meta {
@@ -378,13 +373,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .gh-feature-image {
   grid-column: wide-start / wide-end;
-  width: 100%;
-  margin-top: 8vmin;
+  @apply w-full mt-[8vmin];
 }
 
 .gh-feature-image img {
-  margin-inline: auto;
-  width: 100%;
+  @apply ms-auto me-auto w-full;
 }
 
 .gh-post-footer {
@@ -395,20 +388,20 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* ---------------------------------------------------------- */
 
 .gh-content > * + * {
-  margin-top: 4vmin;
+  @apply mt-[4vmin];
 }
 
 .gh-content [id]:not(:first-child) {
-  margin: 1.5em 0 0;
+  @apply mt-11;
 }
 
 .gh-content > [id] + * {
-  margin-top: 1.5rem;
+  @apply mt-11;
 }
 
 .gh-content [id] + .kg-card,
 .gh-content blockquote + .kg-card {
-  margin-top: 6vmin;
+  @apply mt-[6vmin];
 }
 
 .page-content .kg-image {
@@ -424,51 +417,34 @@ make sure this only happens on large viewports / desktop-ish devices.
 .gh-canvas > ul,
 .gh-canvas > dl,
 .gh-canvas > p {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  /* font-size: 2rem; */
-  line-height: 1.6em;
-  @apply text-xl;
+  @apply text-xl font-sans font-normal leading-6;
 }
 
 .gh-canvas > ul {
-  list-style-type: disc;
-  line-height: 1.6em;
+  @apply list-disc leading-6;
 }
 .gh-canvas > ul li {
-  line-height: 1.6em;
-  padding-left: 0.3em;
-  @apply mt-4;
+  @apply mt-4 leading-6 pl-1.5;
 }
 
 .gh-content > ul,
 .gh-content > ol,
 .gh-content > dl {
-  padding-left: 1.9em;
+  @apply pl-9;
 }
 
 .gh-content hr {
-  margin-top: 6vmin;
+  @apply mt-[6vmin];
 }
 
 .gh-content hr + * {
-  margin-top: 6vmin !important;
+  @apply mt-[6vmin];
 }
 
 .gh-content blockquote {
-  position: relative;
-  font-style: italic;
+  @apply relative italic before:bg-dark-orchid before:content-[''] before:left-[-1.5em] before:top-0 before:bottom-0 before:absolute before:w-[5px];
 }
 
-.gh-content blockquote::before {
-  content: '';
-  position: absolute;
-  left: -1.5em;
-  top: 0;
-  bottom: 0;
-  width: 0.3rem;
-  @apply bg-dark-orchid;
-}
 .gh-content h2 {
   @apply text-2xl md:text-3xl font-bold;
 }
@@ -482,11 +458,11 @@ make sure this only happens on large viewports / desktop-ish devices.
   .gh-canvas ul,
   .gh-canvas dl,
   .gh-canvas p {
-    font-size: 1rem;
+    @apply text-base;
   }
 
   .gh-content blockquote::before {
-    left: -4vmin;
+    @apply left-[-4vmin];
   }
   .read-more .post-card {
     @apply my-4;
