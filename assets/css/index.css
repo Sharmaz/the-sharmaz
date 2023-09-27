@@ -1,5 +1,5 @@
 /* Prism theme */
-@import "prism.css";
+@import 'prism.css';
 
 /* Tailwind */
 @tailwind base;
@@ -17,19 +17,19 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* ---------------------------------------------------------- */
 
 /* Base components */
-@import "vars.css";
-@import "components/global.css";
-@import "components/forms.css";
-@import "components/buttons.css";
+@import 'vars.css';
+@import 'components/global.css';
+@import 'components/forms.css';
+@import 'components/buttons.css';
 
 /* Ghost components */
-@import "ghost/content.css";
-@import "ghost/readmore.css";
-@import "ghost/members.css";
-@import "ghost/errors.css";
-@import "ghost/badge.css";
-@import "ghost/pagination.css";
-@import "ghost/comments.css";
+@import 'ghost/content.css';
+@import 'ghost/readmore.css';
+@import 'ghost/members.css';
+@import 'ghost/errors.css';
+@import 'ghost/badge.css';
+@import 'ghost/pagination.css';
+@import 'ghost/comments.css';
 
 /* Gradients
 /* ---------------------------------------------------------- */
@@ -37,10 +37,10 @@ production stylesheet in assets/built/screen.css using: npm run dev
   @apply bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue;
 }
 .orange-gradient {
-    @apply bg-gradient-to-tl from-dark-orchid via-heliotrope to-orange-peel;
+  @apply bg-gradient-to-tl from-dark-orchid via-heliotrope to-orange-peel;
 }
 .red-gradient {
-    @apply bg-gradient-to-tl from-orange-peel via-vivid-cerise to-heliotrope;
+  @apply bg-gradient-to-tl from-orange-peel via-vivid-cerise to-heliotrope;
 }
 
 /* Main - Your styles here! Edit below
@@ -51,7 +51,7 @@ html {
 }
 
 .gh-article {
-    padding: 8vmin 0;
+  padding: 8vmin 0;
 }
 
 .footer-social a {
@@ -65,9 +65,9 @@ html {
 /* ---------------------------------------------------------- */
 
 .head-menu .nav {
-@apply flex text-4xl md:text-2xl justify-between align-middle flex-col md:flex-row mt-4 md:mt-0;
+  @apply flex text-4xl md:text-2xl justify-between align-middle flex-col md:flex-row mt-4 md:mt-0;
   li {
-      @apply mx-4 my-6 md:my-0 text-center;
+    @apply mx-4 my-6 md:my-0 text-center;
   }
 }
 
@@ -75,31 +75,31 @@ html {
 /* ---------------------------------------------------------- */
 
 .tag-purple {
-    @apply bg-[length:200%_200%]
+  @apply bg-[length:200%_200%]
     purple-gradient
     text-slate-300
     rounded-full hover:animate-purple-animation;
 }
 .tag-orange {
-    @apply bg-[length:200%_200%]
+  @apply bg-[length:200%_200%]
     orange-gradient
     text-slate-300
     rounded-full hover:animate-purple-animation;
 }
 
 .tag-red {
-    @apply bg-[length:200%_200%]
+  @apply bg-[length:200%_200%]
     red-gradient
     text-slate-300
     rounded-full hover:animate-purple-animation;
 }
 
 .tags-container .gh-page-head {
-    @apply pb-0;
+  @apply pb-0;
 }
 
 .tags-container header p {
-    @apply text-base md:text-2xl text-left mx-0 px-0;
+  @apply text-base md:text-2xl text-left mx-0 px-0;
 }
 
 /* Mobile Menu Trigger
@@ -117,227 +117,133 @@ html {
 /* ---------------------------------------------------------- */
 
 :is(.tag-template, .author-template) .post-feed {
-    margin-top: 4vmin;
+  @apply mt-[4vmin];
 }
 
 .post-card {
-    position: relative;
-    grid-column: span 2;
-    display: flex;
-    flex-direction: column;
-    background-size: cover;
-    word-break: break-word;
+  @apply relative flex flex-col bg-cover col-span-2 break-words;
 }
 
 .post-card-image-link {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin-bottom: 32px;
+  @apply relative overflow-hidden block mb-8;
 }
 
 .post-card-image-link::after {
-    content: "";
-    display: block;
-    padding-bottom: 55%;
-}
-
-.post-card[class*="post-access-"] .post-card-image-link::after {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(3px);
-}
-
-.post-card.keep-ratio[class*="post-access-"] .post-card-image-link::after {
-    position: absolute;
-    inset: 0;
-    padding-bottom: 0;
+  @apply block pb-[55%] content-[''];
 }
 
 .post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image-link::after {
-    padding-bottom: 0;
+  @apply pb-0;
 }
 
 .post-card-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-lightgrey) no-repeat center center;
-    object-fit: cover;
+  @apply absolute w-full h-full bg-no-repeat bg-center object-cover;
 }
 
 .post-card.keep-ratio:not(.post-card-large):not(.post-card-full) .post-card-image {
-    position: static;
-}
-
-.post-card-access {
-    position: absolute;
-    inset: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
+  @apply static;
 }
 
 .post-card-content-link {
-    position: relative;
-    display: block;
-    color: var(--color-darkgrey);
+  @apply relative block;
 }
 
 .post-card-content-link:hover {
-    text-decoration: none;
+  @apply no-underline;
 }
 
 .post-feed .no-image .post-card-content-link {
-    padding: 0;
+  @apply p-0;
 }
 
 .no-image .post-card-header {
-    margin-top: 0;
+  @apply mt-0;
 }
 
 .post-card-tags {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--color-secondary-text);
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: -0.005em;
-    line-height: 1;
-    @apply mb-4 text-xl;
+  @apply mb-4 text-xl gap-3 items-center font-semibold tracking-[-0.005em];
 }
 
 .post-card-featured {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    padding-left: 18px;
-    color: var(--ghost-accent-color);
+  @apply relative flex items-center gap-1 pl-4;
 }
 
 .post-card-featured svg {
-    position: absolute;
-    left: 0;
+  @apply absolute left-0;
 }
 
 .post-card-title {
-    margin: 0;
-    font-weight: 800;
-    line-height: 1.2;
-    @apply text-3xl;
+  @apply text-3xl font-extrabold m-0 leading-tight;
 }
 
 .post-card-content-link:hover .post-card-title {
-    opacity: 0.9;
+  @apply opacity-90;
 }
 
 .no-image .post-card-title {
-    margin-top: 0;
+  @apply mt-0;
 }
 
 .has-serif-title .post-card-title {
-    font-family: var(--font-serif);
-    letter-spacing: -0.005em;
+  @apply font-sans tracking-tighter;
 }
 
 .post-card-title svg {
-    margin-top: -3px;
-    margin-left: -1px;
+  @apply mt-[-3px] ml-[-1px];
 }
 
 .post-card-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  @apply flex flex-col grow;
 }
 
 .post-card-excerpt {
-    display: -webkit-box;
-    overflow-y: hidden;
-    margin-top: 12px;
-    max-width: 720px;
-    line-height: 1.5;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    word-break: break-word;
-    @apply text-xl mb-4 mt-4;
+  @apply text-xl mb-4 mt-4 max-w-[720px] leading-normal line-clamp-4 break-words;
 }
 
 .has-sans-body .post-card-excerpt {
-    font-family: var(--font-sans);
+  @apply font-sans;
 }
 
-.post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image) .post-card-excerpt {
-    -webkit-line-clamp: 2;
+.post-card:not(.post-card-large):not(.post-card-full):not(.dynamic):not(.no-image)
+  .post-card-excerpt {
+  @apply line-clamp-2;
 }
 
 :is(.tag-template, .author-template) .post-card-excerpt {
-    margin-top: 6px;
+  @apply mt-1.5;
 }
 
 :is(.tag-template, .author-template) .post-card-large .post-card-excerpt {
-    display: block;
-    overflow-y: auto;
+  @apply block overflow-y-auto;
 }
 
 .post-card-meta {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0;
-    font-size: 1.3rem;
-    color: var(--color-secondary-text);
+  @apply flex items-center gap-1.5 p-0 text-xl;
 }
 
 .post-card-meta > * {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  @apply flex items-center gap-1.5;
 }
 
 .post-card-meta > * + *:not(script)::before {
-    width: 2px;
-    height: 2px;
-    content: "";
-    background-color: var(--color-secondary-text);
-    border-radius: 50%;
+  @apply w-[2px] h-[2px] rounded-[50%] content-[''];
 }
 
 .post-card-meta .sep {
-    margin: 0 4px;
+  @apply mx-1;
 }
 
 .author-profile-image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: color-mod(var(--color-lightgrey) l(+10%));
-    border-radius: 100%;
-
-    object-fit: cover;
+  @apply block w-full h-full rounded-full object-cover;
 }
 
 .author-list {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    list-style: none;
+  @apply flex flex-wrap p-0 list-none;
 }
 
 .author-list-item {
-    position: relative;
-    flex-shrink: 0;
-    margin: 0;
-    padding: 0;
+  @apply relative flex-shrink-0 m-0 p-0;
 }
-
 
 /* Special Styling for home page grid (below):
 
@@ -348,185 +254,169 @@ make sure this only happens on large viewports / desktop-ish devices.
 */
 
 @media (min-width: 1001px) {
-    .post-card-large {
-        grid-column: span 6;
-        display: grid;
-        grid-gap: 4vmin;
-        grid-template-columns: repeat(3, 1fr);
-        border-top: 0;
-    }
+  .post-card-large {
+    @apply grid col-span-6 gap-[4vmin] grid-cols-3 border-t-0;
+  }
 
-    .post-card-large:not(.no-image) .post-card-header {
-        @apply mb-8 mt-0;
-    }
+  .post-card-large:not(.no-image) .post-card-header {
+    @apply mb-8 mt-0;
+  }
 
-    .post-card-large .post-card-image-link {
-        position: relative;
-        grid-column: span 2;
-        margin-bottom: 0;
-    }
+  .post-card-large .post-card-image-link {
+    @apply relative col-span-2 mb-0;
+  }
 
-    .post-card-large .post-card-content {
-        grid-column: span 1;
-        justify-content: center;
-    }
+  .post-card-large .post-card-content {
+    @apply justify-center col-span-1;
+  }
 
-    .post-card-large.no-image .post-card-content {
-        grid-column: span 2;
-    }
+  .post-card-large.no-image .post-card-content {
+    @apply col-span-2;
+  }
 
-    .post-card-large .post-card-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
+  .post-card-large .post-card-image {
+    @apply absolute w-full h-full;
+  }
 
-    .post-card-large .post-card-tags {
-        @apply mb-8;
-    }
+  .post-card-large .post-card-tags {
+    @apply mb-8;
+  }
 
-    .post-card-large .post-card-title {
-        margin-top: 0;
-        line-height: 1.05;
-        @apply text-4xl;
-    }
+  .post-card-large .post-card-title {
+    @apply text-4xl mt-0 leading-tight;
+  }
 
-    .post-card-large .post-card-excerpt {
-        @apply text-xl mb-8;
-    }
+  .post-card-large .post-card-excerpt {
+    @apply text-xl mb-8;
+  }
 
-    .post-card-full {
-        grid-column: span 6;
-    }
+  .post-card-full {
+    @apply col-span-6;
+  }
 
-    .post-card-full .post-card-image-link {
-        margin-bottom: 40px;
-    }
+  .post-card-full .post-card-image-link {
+    @apply mb-10;
+  }
 
-    .post-card-full .post-card-tags {
-        margin-bottom: 14px;
-    }
+  .post-card-full .post-card-tags {
+    @apply mb-3.5;
+  }
 
-    .post-card-full .post-card-title {
-        font-size: 6.4rem;
-        line-height: 0.95;
-    }
+  .post-card-full .post-card-title {
+    @apply leading-none text-8xl;
+  }
 
-    .post-card-full .post-card-excerpt {
-        margin-top: 20px;
-        font-size: 1.8rem;
-    }
+  .post-card-full .post-card-excerpt {
+    @apply mt-5 text-3xl;
+  }
 
-    .post-card-large + .post-card-large:nth-child(even) {
-        margin: 32px 0;
-    }
+  .post-card-large + .post-card-large:nth-child(even) {
+    @apply my-8 mx-0;
+  }
 
-    .post-card-large + .post-card-large:nth-child(even) .post-card-content {
-        order: -1;
-    }
+  .post-card-large + .post-card-large:nth-child(even) .post-card-content {
+    @apply -order-1;
+  }
 
-    .post-card.dynamic {
-        grid-column: span 3;
-    }
+  .post-card.dynamic {
+    @apply col-span-3;
+  }
 
-    .post-card.dynamic .post-card-title {
-        @apply text-4xl;
-    }
+  .post-card.dynamic .post-card-title {
+    @apply text-4xl;
+  }
 
-    .post-card.dynamic .post-card-excerpt {
-        -webkit-line-clamp: 3;
-        @apply text-xl mb-4 mt-4;
-    }
+  .post-card.dynamic .post-card-excerpt {
+    @apply text-xl mb-4 mt-4 line-clamp-3;
+  }
 }
-
 
 /* Page
 /* ---------------------------------------------------------- */
 
 .gh-page-head {
-    margin: 0 auto;
-    padding: 8vmin 0 4vmin;
-    text-align: center;
+  margin: 0 auto;
+  padding: 8vmin 0 4vmin;
+  text-align: center;
 }
 
 .gh-page-image {
-    margin: 4vmin 0 0 0;
+  margin: 4vmin 0 0 0;
 }
 
 .gh-page-head > p {
-    max-width: 720px;
-    margin: 0.3em auto 0;
-    padding: 0 6vmin;
-    font-size: 1.3em;
-    line-height: 1.4em;
-    opacity: 0.5;
+  max-width: 720px;
+  margin: 0.3em auto 0;
+  padding: 0 6vmin;
+  font-size: 1.3em;
+  line-height: 1.4em;
+  opacity: 0.5;
 }
 
 @media (max-width: 700px) {
-    .gh-page-head > p {
-        font-size: 1.6rem;
-    }
+  .gh-page-head > p {
+    font-size: 1.6rem;
+  }
 }
-
 
 /* Post
 /* ---------------------------------------------------------- */
 
 .gh-header {
-    padding: 0 0 8vmin 0;
-    text-align: center;
+  padding: 0 0 8vmin 0;
+  text-align: center;
 }
 
 .gh-post-meta {
-    display: block;
-    margin: 0 0 1rem;
-    font-size: 1.4rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    opacity: 0.8;
+  display: block;
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
 }
 
 .gh-feature-image {
-    grid-column: wide-start / wide-end;
-    width: 100%;
-    margin-top: 8vmin;
+  grid-column: wide-start / wide-end;
+  width: 100%;
+  margin-top: 8vmin;
 }
 
 .gh-feature-image img {
-    margin-inline: auto;
-    width: 100%;
+  margin-inline: auto;
+  width: 100%;
 }
 
 .gh-post-footer {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 
 /* Content & Typography
 /* ---------------------------------------------------------- */
 
 .gh-content > * + * {
-    margin-top: 4vmin;
+  margin-top: 4vmin;
 }
 
 .gh-content [id]:not(:first-child) {
-    margin: 1.5em 0 0;
+  margin: 1.5em 0 0;
 }
 
 .gh-content > [id] + * {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .gh-content [id] + .kg-card,
 .gh-content blockquote + .kg-card {
-    margin-top: 6vmin;
+  margin-top: 6vmin;
 }
 
 .page-content .kg-image {
-    @apply rounded-2xl md:rounded-3xl mx-auto;
+  @apply rounded-2xl md:rounded-3xl mx-auto;
 }
 
 .page-content .gh-header {
-    @apply pb-8;
+  @apply pb-8;
 }
 
 .gh-canvas > blockquote,
@@ -534,127 +424,126 @@ make sure this only happens on large viewports / desktop-ish devices.
 .gh-canvas > ul,
 .gh-canvas > dl,
 .gh-canvas > p {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    /* font-size: 2rem; */
-    line-height: 1.6em;
-    @apply text-xl;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  /* font-size: 2rem; */
+  line-height: 1.6em;
+  @apply text-xl;
 }
 
 .gh-canvas > ul {
-    list-style-type: disc;
-    line-height: 1.6em;
+  list-style-type: disc;
+  line-height: 1.6em;
 }
 .gh-canvas > ul li {
-    line-height: 1.6em;
-    padding-left: .3em;
-    @apply mt-4;
+  line-height: 1.6em;
+  padding-left: 0.3em;
+  @apply mt-4;
 }
 
 .gh-content > ul,
 .gh-content > ol,
 .gh-content > dl {
-    padding-left: 1.9em;
+  padding-left: 1.9em;
 }
 
 .gh-content hr {
-    margin-top: 6vmin;
+  margin-top: 6vmin;
 }
 
 .gh-content hr + * {
-    margin-top: 6vmin !important;
+  margin-top: 6vmin !important;
 }
 
 .gh-content blockquote {
-    position: relative;
-    font-style: italic;
+  position: relative;
+  font-style: italic;
 }
 
 .gh-content blockquote::before {
-    content: "";
-    position: absolute;
-    left: -1.5em;
-    top: 0;
-    bottom: 0;
-    width: 0.3rem;
-    @apply bg-dark-orchid;
+  content: '';
+  position: absolute;
+  left: -1.5em;
+  top: 0;
+  bottom: 0;
+  width: 0.3rem;
+  @apply bg-dark-orchid;
 }
 .gh-content h2 {
-    @apply text-2xl md:text-3xl font-bold;
+  @apply text-2xl md:text-3xl font-bold;
 }
 .gh-content a {
-    @apply underline underline-offset-[5px] decoration-dark-orchid;
+  @apply underline underline-offset-[5px] decoration-dark-orchid;
 }
 
 @media (max-width: 650px) {
-    .gh-canvas blockquote,
-    .gh-canvas ol,
-    .gh-canvas ul,
-    .gh-canvas dl,
-    .gh-canvas p {
-        font-size: 1rem;
-    }
+  .gh-canvas blockquote,
+  .gh-canvas ol,
+  .gh-canvas ul,
+  .gh-canvas dl,
+  .gh-canvas p {
+    font-size: 1rem;
+  }
 
-    .gh-content blockquote::before {
-        left: -4vmin;
-    }
-    .read-more .post-card {
-        @apply my-4;
-    }
+  .gh-content blockquote::before {
+    left: -4vmin;
+  }
+  .read-more .post-card {
+    @apply my-4;
+  }
 }
-
 
 /* Author Archive
 /* ---------------------------------------------------------- */
 
 .author-container .gh-page-head p {
-    @apply text-base md:text-2xl my-4;
+  @apply text-base md:text-2xl my-4;
 }
 
 .author-container .gh-author-links {
-    @apply underline underline-offset-[5px] decoration-dark-orchid;
+  @apply underline underline-offset-[5px] decoration-dark-orchid;
 }
 
 .author-container .gh-author-links a {
-    @apply text-base md:text-2xl
+  @apply text-base md:text-2xl;
 }
 
 .author-container .gh-author-image {
-    @apply w-[64px] md:w-[150px]
+  @apply w-[64px] md:w-[150px];
 }
 
 .gh-author-image {
-    margin: 0 auto 1.5em;
-    border-radius: 100%;
-    overflow: hidden;
-    object-fit: cover;
+  margin: 0 auto 1.5em;
+  border-radius: 100%;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .gh-author-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gh-author-links a {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    margin: 0 0.75vmin;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0.75vmin;
 }
 
 .gh-author-links a + a:before {
-    display: block;
-    content: "";
-    margin: 0 1.25vmin 0 0;
-    height: 1em;
-    width: 1px;
-    background: rgba(0,0,0,0.3);
-    transform: rotate(20deg);
+  display: block;
+  content: '';
+  margin: 0 1.25vmin 0 0;
+  height: 1em;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.3);
+  transform: rotate(20deg);
 }
 
 @media (max-width: 700px) {
-    .gh-author-meta {
-        font-size: 1.6rem;
-    }
+  .gh-author-meta {
+    font-size: 1.6rem;
+  }
 }
