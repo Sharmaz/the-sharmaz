@@ -1,46 +1,39 @@
 {{!< default}}
-
-<div class="gh-page">
-    <div class="gh-container author-container">
-
-        {{#author}}
-        <header class="gh-page-head">
-            {{#if profile_image}}
-                <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}" />
+<div class="page">
+  <div class="w-full px-4 md:px-6 lg:px-0 lg:max-w-[1200px] my-0 lg:mx-auto">
+    {{#author}}
+      <header class="my-0 mx-auto pt-[8vmin] pb-[4vmin] text-center">
+        {{#if profile_image}}
+          <img class="mx-auto mb-6 rounded-full overflow-hidden object-cover w-[64px] md:w-[150px]" src="{{profile_image}}"
+            alt="{{name}}" />
+        {{/if}}
+        <h1 class="text-2xl md:text-5xl font-bold">{{name}}</h1>
+        {{#if bio}}
+          <p class="text-base md:text-2xl my-4 px-[6vmin] opacity-50">{{bio}}</p>
+        {{/if}}
+        <div class="text-2xl">
+          <div class="author-links">
+            {{#if website}}
+              <a href="{{website}}" target="_blank" rel="noopener">Website</a>
             {{/if}}
-
-            <h1 class="text-2xl md:text-5xl font-bold">{{name}}</h1>
-            {{#if bio}}
-                <p>{{bio}}</p>
+            {{#if twitter}}
+              <a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a>
             {{/if}}
-
-            <div class="gh-author-meta">
-                <div class="gh-author-links">
-                    {{#if website}}
-                        <a href="{{website}}" target="_blank" rel="noopener">Website</a>
-                    {{/if}}
-                    {{#if twitter}}
-                        <a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a>
-                    {{/if}}
-                    {{#if facebook}}
-                        <a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a>
-                    {{/if}}
-                </div>
-            </div>
-
-            {{#if cover_image}}
-                <img class="gh-page-image" src="{{cover_image}}" alt="{{name}}" />
+            {{#if facebook}}
+              <a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a>
             {{/if}}
-        </header>
-        {{/author}}
-
-        <div class="post-feed">
-        {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
-        {{/foreach}}
+          </div>
         </div>
-
+        {{#if cover_image}}
+          <img class="mt-[4vmin]" src="{{cover_image}}" alt="{{name}}" />
+        {{/if}}
+      </header>
+    {{/author}}
+    <div
+      class="post-feed relative grid gap-10 md:gap-y-[4.8vmin] md:gap-x-[4vmin] grid-cols-[1fr] md:grid-cols-4 lg:grid-cols-6 py-12">
+      {{#foreach posts}}
+        {{> "card"}}
+      {{/foreach}}
     </div>
+  </div>
 </div>
