@@ -42,6 +42,16 @@ production stylesheet in assets/built/screen.css using: npm run dev
   @apply bg-gradient-to-tl from-orange-peel via-vivid-cerise to-heliotrope;
 }
 
+/* Code Block
+/* ---------------------------------------------------------- */
+.code-toolbar {
+  @apply relative;
+}
+
+.toolbar {
+  @apply absolute top-2 right-2;
+}
+
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
 
