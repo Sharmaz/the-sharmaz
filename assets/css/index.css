@@ -26,7 +26,6 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import 'ghost/content.css';
 @import 'ghost/readmore.css';
 @import 'ghost/members.css';
-@import 'ghost/errors.css';
 @import 'ghost/badge.css';
 @import 'ghost/pagination.css';
 @import 'ghost/comments.css';
@@ -317,38 +316,6 @@ make sure this only happens on large viewports / desktop-ish devices.
   .post-card.dynamic .post-card-excerpt {
     @apply text-xl mb-4 mt-4 line-clamp-3;
   }
-}
-
-/* Page
-/* ---------------------------------------------------------- */
-
-.gh-page-head {
-  @apply my-0 mx-auto pt-[8vmin] pb-[4vmin] text-center;
-}
-
-.gh-page-image {
-  @apply mt-[4vmin];
-}
-
-
-/* Post
-/* ---------------------------------------------------------- */
-
-.gh-header {
-  @apply text-center pb-[8vmin]
-}
-
-.gh-post-meta {
-  display: block;
-  margin: 0 0 1rem;
-  font-size: 1.4rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  opacity: 0.8;
-}
-
-.gh-post-footer {
-  margin: 2rem 0;
 }
 
 /* Content & Typography
