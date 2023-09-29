@@ -71,4 +71,4 @@ yarn zip
 
 ## Copyright & License
 
-Copyright (c) 2013-2023 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) The Sharmaz - Released under the [MIT license](LICENSE).
