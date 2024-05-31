@@ -102,5 +102,5 @@
 		"zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json"
 	},
 	"type": "module",
-	"version": "0.1.0"
+	"version": "0.1.1"
 }
