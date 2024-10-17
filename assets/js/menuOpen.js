@@ -1,5 +1,6 @@
 // Toggle the menu open and close when on mobile
 export default function menuOpen() {
+  const mainHeader = document.querySelector('.main-header');
   const burgerButton = document.querySelector('.burger-button');
   const burgerElements = document.querySelectorAll('.burger-element');
   const menu = document.getElementById('head-menu');
@@ -15,6 +16,10 @@ export default function menuOpen() {
     menuActions.classList.toggle('flex');
     menu.classList.toggle('flex');
     menu.classList.toggle('backdrop-blur');
+    if (window.chrome) {
+      mainHeader.classList.toggle('backdrop-blur');
+      mainHeader.classList.toggle('bg-background');
+    }
     document.body.classList.toggle('overflow-hidden');
   });
 }
