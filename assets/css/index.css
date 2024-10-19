@@ -340,23 +340,23 @@ make sure this only happens on large viewports / desktop-ish devices.
 .gh-canvas > ul,
 .gh-canvas > dl,
 .gh-canvas > p {
-  @apply text-xl font-sans font-normal leading-6;
+  @apply text-xl font-sans font-normal leading-7;
 }
 
 .gh-canvas > ol {
-  @apply list-decimal leading-6;
+  @apply list-decimal leading-7;
 }
 
 .gh-canvas > ol li {
-  @apply mt-4 leading-6 pl-1.5;
+  @apply mt-4 leading-7 pl-1.5;
 }
 
 .gh-canvas > ul {
-  @apply list-disc leading-6;
+  @apply list-disc leading-7;
 }
 
 .gh-canvas > ul li {
-  @apply mt-4 leading-6 pl-1.5;
+  @apply mt-4 leading-7 pl-1.5;
 }
 
 .gh-content > ul,
@@ -431,4 +431,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .author-links a {
   @apply relative inline-flex items-center mx-[0.75vmin] text-base md:text-2xl;
+}
+
+/* Inline Code
+/* ---------------------------------------------------------- */
+
+p code, ul code, ol code {
+  @apply bg-primary rounded-md px-1;
 }
