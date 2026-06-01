@@ -36,3 +36,8 @@ projectFilesBackup
 /tmp
 /out-tsc
 /assets/built
+
+# AI generated files
+CLAUDE.md
+.claude
+*PLAN.md

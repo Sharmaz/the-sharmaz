@@ -1,7 +1,7 @@
 {
 	"author": {
-		"email": "irae45@gmail.com",
 		"name": "Ivan Robles",
+		"email": "irae45@gmail.com",
 		"url": "https://ivanrobles.pro/"
 	},
 	"browserslist": [
@@ -102,5 +102,5 @@
 		"zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json"
 	},
 	"type": "module",
-	"version": "0.1.3"
+	"version": "0.1.4"
 }

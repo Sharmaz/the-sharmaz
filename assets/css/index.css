@@ -416,17 +416,32 @@ make sure this only happens on large viewports / desktop-ish devices.
 /* Content grid
 /* ---------------------------------------------------------- */
 
+.gh-canvas {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(4vmin, auto)
+    [wide-start] minmax(auto, 140px)
+    [main-start] min(720px, calc(100% - 8vmin))
+    [main-end] minmax(auto, 140px)
+    [wide-end] minmax(4vmin, auto)
+    [full-end];
+}
+
+.gh-canvas > * {
+  grid-column: main-start / main-end;
+}
+
 .kg-width-wide,
 .kg-content-wide > div {
-    grid-column: wide-start / wide-end;
+  grid-column: wide-start / wide-end;
 }
 
 .kg-width-full {
-    grid-column: full-start / full-end;
+  grid-column: full-start / full-end;
 }
 
 .kg-width-full img {
-    width: 100%;
+  width: 100%;
 }
 
 /* Author Archive
