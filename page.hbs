@@ -1,8 +1,8 @@
 {{!< default}}
 {{#post}}
   <article class="py-[8vmin] page-content {{post_class}}">
-    {{#match @page.show_title_and_feature_image}}
-      <header class="pb-8 gh-canvas md:w-[720px] mx-4 md:mx-auto">
+    {{#if @page.show_title_and_feature_image}}
+      <header class="pb-8 md:w-[720px] mx-4 md:mx-auto">
         <h1 class="font-bold text-3xl md:text-5xl text-left">{{title}}</h1>
           {{#if feature_image}}
             <figure class="w-full mt-[8vmin]">
@@ -13,8 +13,8 @@
             </figure>
           {{/if}}
       </header>
-    {{/match}}
-    <div class="gh-content gh-canvas md:w-[720px] mx-4 md:mx-auto">
+    {{/if}}
+    <div class="gh-content gh-canvas">
       {{content}}
     </div>
   </article>
